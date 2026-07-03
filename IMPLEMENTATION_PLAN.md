@@ -35,7 +35,7 @@ Regras de uso:
 | Fase 0 - Preparacao do repositorio | `complete` |
 | Fase 1 - Setup do backend | `complete` |
 | Fase 2 - Banco de dados e Prisma | `complete` |
-| Fase 3 - Autenticacao | `pending` |
+| Fase 3 - Autenticacao | `complete` |
 | Fase 4 - Categorias no backend | `pending` |
 | Fase 5 - Transacoes no backend | `pending` |
 | Fase 6 - Setup do frontend | `pending` |
@@ -46,7 +46,7 @@ Regras de uso:
 | Fase 11 - Transacoes no frontend | `pending` |
 | Fase 12 - Validacao final e entrega | `pending` |
 
-Proxima fase de implementacao: Fase 3 - Autenticacao.
+Proxima fase de implementacao: Fase 4 - Categorias no backend.
 
 ## Fase 0 - Preparacao do repositorio
 
