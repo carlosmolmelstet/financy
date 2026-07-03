@@ -62,8 +62,8 @@ O endpoint GraphQL fica disponivel em `http://localhost:4000/graphql`.
 ```bash
 cd frontend
 cp .env.example .env
-# instalar dependencias
-# iniciar aplicacao
+npm install
+npm run dev
 ```
 
 ## Variaveis de ambiente
@@ -79,13 +79,6 @@ Frontend:
 
 ## Scripts
 
-Esta secao sera completada quando os projetos forem criados.
-
-- `dev`
-- `build`
-- `typecheck`
-- `test`, se existir
-
 Backend:
 
 - `npm run dev`
@@ -95,6 +88,14 @@ Backend:
 - `npm run db:migrate`
 - `npm run db:studio`
 - `npm test`
+
+Frontend:
+
+- `npm run dev`
+- `npm run build`
+- `npm run typecheck`
+- `npm run lint`
+- `npm run preview`
 
 ## Checklist de entrega
 
