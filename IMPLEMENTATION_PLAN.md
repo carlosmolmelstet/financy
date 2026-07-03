@@ -329,6 +329,7 @@ Escopo macro:
 - Validar autorizacao entre usuarios.
 - Revisar README.
 - Remover codigo morto.
+- Remover a pagina temporaria de preview do design system antes da entrega.
 - Garantir ausencia de secrets reais.
 
 Validacao final:

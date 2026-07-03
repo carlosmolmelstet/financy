@@ -1,0 +1,267 @@
+.ds-preview {
+  background: #27272d;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  min-height: 100vh;
+  padding: var(--space-8) 0;
+}
+
+.ds-panel {
+  background: var(--color-white);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  margin: 0 auto;
+  padding: 80px;
+  width: min(1092px, calc(100vw - 32px));
+}
+
+.ds-panel h1 {
+  color: #09090a;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.ds-panel h2 {
+  color: #121214;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.ds-color-sections,
+.ds-color-section,
+.ds-color-section__rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.ds-color-sections {
+  gap: 48px;
+}
+
+.ds-color-section {
+  gap: 20px;
+}
+
+.ds-color-section__rows {
+  gap: 20px;
+}
+
+.ds-color-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 8px;
+}
+
+.ds-color-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 180px;
+}
+
+.ds-color-card__swatch {
+  border: 1px solid rgb(0 0 0 / 0.04);
+  border-radius: 10px;
+  display: block;
+  height: 56px;
+  width: 100%;
+}
+
+.ds-color-card strong {
+  color: #121214;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.ds-color-card span:not(.ds-color-card__swatch) {
+  color: #121214;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.ds-font-row {
+  align-items: flex-start;
+  display: flex;
+  gap: var(--space-8);
+  justify-content: space-between;
+}
+
+.ds-font-row p {
+  color: #121214;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.4;
+  margin: 0 0 var(--space-2);
+}
+
+.ds-font-row strong {
+  color: var(--color-black);
+  display: block;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.ds-note {
+  background: #e1e1e6;
+  border-radius: var(--radius-sm);
+  color: #121214;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: var(--space-4);
+  width: fit-content;
+}
+
+.ds-icon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  padding: var(--space-3);
+}
+
+.ds-icon-grid svg {
+  color: var(--color-black);
+  flex: 0 0 auto;
+}
+
+.ds-vector-row {
+  align-items: center;
+  display: flex;
+  gap: var(--space-8);
+  padding: var(--space-3);
+}
+
+.ds-logo,
+.ds-logo-icon {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.ds-logo {
+  height: 32px;
+  width: 134px;
+}
+
+.ds-logo-icon {
+  height: 40px;
+  width: 40px;
+}
+
+.ds-component-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.ds-component-spec {
+  display: grid;
+  gap: var(--space-8);
+  grid-template-columns: minmax(0, 1fr) 140px;
+}
+
+.ds-component-spec__canvas {
+  align-items: center;
+  border: 1px dashed #c084fc;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-height: 168px;
+  padding: 64px;
+}
+
+.ds-component-spec__labels {
+  color: #7c7c8a;
+  display: flex;
+  flex-direction: column;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 14px;
+  gap: 40px;
+  justify-content: center;
+  line-height: 1;
+}
+
+.ds-component-spec__canvas .ui-field {
+  max-width: 460px;
+}
+
+.ds-component-spec__canvas .ui-select-field {
+  max-width: 460px;
+}
+
+.ds-component-spec__canvas .ui-field.is-preview-active .ui-field__label {
+  color: var(--color-brand-base);
+}
+
+.ds-component-spec__canvas .ui-field.is-preview-active .ui-field__icon {
+  color: var(--color-brand-base);
+}
+
+.ds-component-spec__canvas .ui-field.is-preview-active .ui-field__control {
+  border-color: var(--color-gray-300);
+}
+
+.ds-button-pair,
+.ds-icon-button-pair {
+  align-items: center;
+  display: flex;
+  gap: var(--space-4);
+}
+
+.ds-tag-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  justify-content: center;
+  max-width: 520px;
+}
+
+.ds-type-stack {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+@media (max-width: 760px) {
+  .ds-preview {
+    padding: var(--space-4) 0;
+  }
+
+  .ds-panel {
+    gap: var(--space-10);
+    padding: var(--space-8);
+  }
+
+  .ds-panel h1 {
+    font-size: 32px;
+  }
+
+  .ds-font-row,
+  .ds-component-spec {
+    grid-template-columns: 1fr;
+  }
+
+  .ds-font-row {
+    flex-direction: column;
+  }
+
+  .ds-font-row strong {
+    font-size: 40px;
+  }
+
+  .ds-component-spec__canvas {
+    padding: var(--space-6);
+  }
+
+  .ds-component-spec__labels {
+    display: none;
+  }
+}

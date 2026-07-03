@@ -1,5 +1,8 @@
 export { Button } from './Button'
 export { IconButton } from './IconButton'
 export { Input } from './Input'
+export { PaginationButton } from './PaginationButton'
+export { SelectField } from './SelectField'
 export { Tag, type TagTone } from './Tag'
+export { TextLink } from './TextLink'
 export { TransactionTypeBadge } from './TransactionTypeBadge'

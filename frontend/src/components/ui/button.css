@@ -53,6 +53,10 @@
   background: var(--color-brand-dark);
 }
 
+.ui-button--solid.is-preview-hover {
+  background: var(--color-brand-dark);
+}
+
 .ui-button--outline {
   background: var(--color-white);
   border-color: var(--color-gray-300);
@@ -60,6 +64,10 @@
 }
 
 .ui-button--outline:hover:not(:disabled) {
+  background: var(--color-gray-200);
+}
+
+.ui-button--outline.is-preview-hover {
   background: var(--color-gray-200);
 }
 
@@ -88,6 +96,10 @@
 }
 
 .ui-icon-button:hover:not(:disabled) {
+  background: var(--color-gray-200);
+}
+
+.ui-icon-button.is-preview-hover {
   background: var(--color-gray-200);
 }
 

@@ -26,8 +26,13 @@
   padding: 0 13px;
 }
 
-.ui-field__control:focus-within {
-  border-color: var(--color-brand-base);
+.ui-field:focus-within:not(:has(input[aria-invalid="true"])) .ui-field__label,
+.ui-field:focus-within:not(:has(input[aria-invalid="true"])) .ui-field__icon {
+  color: var(--color-brand-base);
+}
+
+.ui-field:focus-within:not(:has(input[aria-invalid="true"])) .ui-field__control {
+  border-color: var(--color-gray-300);
 }
 
 .ui-field__control--error {
@@ -42,6 +47,7 @@
   font-size: 1rem;
   min-width: 0;
   outline: 0;
+  caret-color: var(--color-brand-base);
 }
 
 .ui-field__control input::placeholder {
