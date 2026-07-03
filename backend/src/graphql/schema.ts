@@ -1,5 +1,6 @@
 import { authResolvers, authTypeDefs } from "./auth.js";
 import { categoryResolvers, categoryTypeDefs } from "./categories.js";
+import { transactionResolvers, transactionTypeDefs } from "./transactions.js";
 
 export const typeDefs = `#graphql
   type HealthCheck {
@@ -12,6 +13,7 @@ export const typeDefs = `#graphql
     health: HealthCheck!
     me: User!
     categories: [Category!]!
+    transactions: [Transaction!]!
   }
 
   type Mutation {
@@ -20,10 +22,14 @@ export const typeDefs = `#graphql
     createCategory(input: CreateCategoryInput!): Category!
     updateCategory(id: ID!, input: UpdateCategoryInput!): Category!
     deleteCategory(id: ID!): Category!
+    createTransaction(input: CreateTransactionInput!): Transaction!
+    updateTransaction(id: ID!, input: UpdateTransactionInput!): Transaction!
+    deleteTransaction(id: ID!): Transaction!
   }
 
   ${authTypeDefs}
   ${categoryTypeDefs}
+  ${transactionTypeDefs}
 `;
 
 export const resolvers = {
@@ -35,9 +41,11 @@ export const resolvers = {
     }),
     ...authResolvers.Query,
     ...categoryResolvers.Query,
+    ...transactionResolvers.Query,
   },
   Mutation: {
     ...authResolvers.Mutation,
     ...categoryResolvers.Mutation,
+    ...transactionResolvers.Mutation,
   },
 };
