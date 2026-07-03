@@ -49,10 +49,13 @@ As instrucoes abaixo serao completadas conforme `backend/` e `frontend/` forem i
 ```bash
 cd backend
 cp .env.example .env
-# instalar dependencias
-# rodar migrations
-# iniciar servidor
+npm install
+npm run dev
 ```
+
+O endpoint GraphQL fica disponivel em `http://localhost:4000/graphql`.
+
+As migrations serao adicionadas quando o Prisma for configurado.
 
 ### Frontend
 
@@ -82,6 +85,13 @@ Esta secao sera completada quando os projetos forem criados.
 - `build`
 - `typecheck`
 - `test`, se existir
+
+Backend:
+
+- `npm run dev`
+- `npm run build`
+- `npm run typecheck`
+- `npm test`
 
 ## Checklist de entrega
 
