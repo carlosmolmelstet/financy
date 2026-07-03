@@ -49,13 +49,13 @@ As instrucoes abaixo serao completadas conforme `backend/` e `frontend/` forem i
 ```bash
 cd backend
 cp .env.example .env
+# preencha JWT_SECRET e DATABASE_URL=file:./dev.db
 npm install
+npm run db:migrate
 npm run dev
 ```
 
 O endpoint GraphQL fica disponivel em `http://localhost:4000/graphql`.
-
-As migrations serao adicionadas quando o Prisma for configurado.
 
 ### Frontend
 
@@ -91,6 +91,9 @@ Backend:
 - `npm run dev`
 - `npm run build`
 - `npm run typecheck`
+- `npm run db:generate`
+- `npm run db:migrate`
+- `npm run db:studio`
 - `npm test`
 
 ## Checklist de entrega
