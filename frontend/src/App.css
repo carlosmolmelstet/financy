@@ -1,59 +1,208 @@
-.app-shell {
+.preview-shell {
   min-height: 100vh;
+  padding: var(--space-8);
+}
+
+.preview-board {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  margin: 0 auto;
+  max-width: 1180px;
+  overflow: hidden;
+}
+
+.preview-header {
+  align-items: center;
+  border-bottom: 1px solid var(--color-gray-200);
+  display: flex;
+  justify-content: space-between;
+  min-height: 72px;
+  padding: 0 var(--space-8);
+}
+
+.preview-brand {
+  align-items: center;
+  color: var(--color-brand-base);
+  display: inline-flex;
+  font-size: 1.125rem;
+  font-weight: 700;
+  gap: var(--space-2);
+}
+
+.preview-brand__mark {
+  align-items: center;
+  background: var(--color-green-light);
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
+}
+
+.preview-grid {
   display: grid;
-  place-items: center;
-  padding: 32px;
+  grid-template-columns: minmax(0, 1fr) 320px;
 }
 
-.setup-panel {
-  width: min(100%, 560px);
-  border: 1px solid #d9dee8;
-  border-radius: 8px;
-  padding: 32px;
-  background: #ffffff;
+.preview-main,
+.preview-side {
+  padding: var(--space-8);
 }
 
-.setup-kicker {
-  display: block;
-  margin-bottom: 12px;
-  color: #2362c5;
+.preview-side {
+  border-left: 1px solid var(--color-gray-200);
+  display: grid;
+  gap: var(--space-4);
+  align-content: start;
+}
+
+.preview-section-header,
+.preview-list__header {
+  align-items: center;
+  display: flex;
+  gap: var(--space-4);
+  justify-content: space-between;
+}
+
+.preview-eyebrow {
+  color: var(--color-brand-base);
   font-size: 0.875rem;
   font-weight: 700;
+  margin: 0 0 var(--space-1);
 }
 
-.setup-panel h1 {
+h1,
+h2,
+p {
   margin: 0;
-  color: #111827;
+}
+
+h1 {
+  color: var(--color-gray-800);
   font-size: 2rem;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
-.setup-panel p {
-  margin: 12px 0 0;
-  color: #4b5563;
+h2 {
+  color: var(--color-gray-800);
+  font-size: 1.125rem;
+  line-height: 1.35;
 }
 
-.status-list {
+.summary-grid {
   display: grid;
-  gap: 16px;
-  margin: 24px 0 0;
+  gap: var(--space-4);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: var(--space-8);
 }
 
-.status-list div {
+.summary-card {
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
   display: grid;
-  gap: 4px;
-  padding-top: 16px;
-  border-top: 1px solid #e5e7eb;
+  gap: var(--space-2);
+  min-height: 132px;
+  padding: var(--space-5);
 }
 
-.status-list dt {
-  color: #6b7280;
-  font-size: 0.8125rem;
-  font-weight: 700;
+.summary-card > svg {
+  color: var(--color-brand-base);
 }
 
-.status-list dd {
-  margin: 0;
-  color: #111827;
-  overflow-wrap: anywhere;
+.summary-card span {
+  color: var(--color-gray-500);
+  font-size: 0.875rem;
+}
+
+.summary-card strong {
+  color: var(--color-gray-800);
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.preview-list {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.preview-list__header .ui-field {
+  max-width: 260px;
+}
+
+.preview-list__header .ui-field__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.transaction-row {
+  align-items: center;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: minmax(180px, 1fr) auto auto auto auto;
+  min-height: 72px;
+  padding: var(--space-4);
+}
+
+.transaction-row div:first-child {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.transaction-row span {
+  color: var(--color-gray-500);
+  font-size: 0.875rem;
+}
+
+.transaction-row__amount {
+  color: var(--color-gray-800);
+  white-space: nowrap;
+}
+
+.transaction-row__actions {
+  display: inline-flex;
+  gap: var(--space-2);
+}
+
+@media (max-width: 900px) {
+  .preview-shell {
+    padding: var(--space-4);
+  }
+
+  .preview-header,
+  .preview-section-header,
+  .preview-list__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .preview-grid,
+  .summary-grid,
+  .transaction-row {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-side {
+    border-left: 0;
+    border-top: 1px solid var(--color-gray-200);
+  }
+
+  .transaction-row {
+    align-items: start;
+  }
+
+  .transaction-row__actions {
+    justify-content: flex-start;
+  }
 }

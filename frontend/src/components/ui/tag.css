@@ -1,0 +1,51 @@
+.ui-tag {
+  align-items: center;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 20px;
+  min-height: 28px;
+  padding: var(--space-1) var(--space-3);
+  white-space: nowrap;
+}
+
+.ui-tag--gray {
+  background: var(--color-gray-200);
+  color: var(--color-gray-700);
+}
+
+.ui-tag--blue {
+  background: var(--color-blue-light);
+  color: var(--color-blue-dark);
+}
+
+.ui-tag--purple {
+  background: var(--color-purple-light);
+  color: var(--color-purple-dark);
+}
+
+.ui-tag--pink {
+  background: var(--color-pink-light);
+  color: var(--color-pink-dark);
+}
+
+.ui-tag--red {
+  background: var(--color-red-light);
+  color: var(--color-red-dark);
+}
+
+.ui-tag--orange {
+  background: var(--color-orange-light);
+  color: var(--color-orange-dark);
+}
+
+.ui-tag--yellow {
+  background: var(--color-yellow-light);
+  color: var(--color-yellow-dark);
+}
+
+.ui-tag--green {
+  background: var(--color-green-light);
+  color: var(--color-green-dark);
+}
