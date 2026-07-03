@@ -36,7 +36,7 @@ Regras de uso:
 | Fase 1 - Setup do backend | `complete` |
 | Fase 2 - Banco de dados e Prisma | `complete` |
 | Fase 3 - Autenticacao | `complete` |
-| Fase 4 - Categorias no backend | `pending` |
+| Fase 4 - Categorias no backend | `complete` |
 | Fase 5 - Transacoes no backend | `pending` |
 | Fase 6 - Setup do frontend | `pending` |
 | Fase 7 - Tema, tokens e componentes base do Figma | `pending` |
@@ -46,7 +46,7 @@ Regras de uso:
 | Fase 11 - Transacoes no frontend | `pending` |
 | Fase 12 - Validacao final e entrega | `pending` |
 
-Proxima fase de implementacao: Fase 4 - Categorias no backend.
+Proxima fase de implementacao: Fase 5 - Transacoes no backend.
 
 ## Fase 0 - Preparacao do repositorio
 
