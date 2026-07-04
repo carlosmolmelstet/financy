@@ -40,13 +40,13 @@ Regras de uso:
 | Fase 5 - Transacoes no backend | `complete` |
 | Fase 6 - Setup do frontend | `complete` |
 | Fase 7 - Tema, tokens e componentes base do Figma | `complete` |
-| Fase 8 - Login, cadastro e sessao no frontend | `pending` |
+| Fase 8 - Login, cadastro e sessao no frontend | `complete` |
 | Fase 9 - Layout autenticado e dashboard | `pending` |
 | Fase 10 - Categorias no frontend | `pending` |
 | Fase 11 - Transacoes no frontend | `pending` |
 | Fase 12 - Validacao final e entrega | `pending` |
 
-Proxima fase de implementacao: Fase 8 - Login, cadastro e sessao no frontend.
+Proxima fase de implementacao: Fase 9 - Layout autenticado e dashboard.
 
 ## Fase 0 - Preparacao do repositorio
 

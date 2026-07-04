@@ -1,0 +1,130 @@
+.signup-page {
+  align-items: center;
+  background: var(--color-gray-100);
+  color: var(--color-gray-800);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  min-height: 100dvh;
+  padding: var(--space-12) var(--space-4);
+  width: 100%;
+}
+
+.signup-page__logo {
+  color: var(--color-brand-base);
+  display: block;
+  flex: 0 0 auto;
+  height: 32px;
+  width: 134px;
+}
+
+.signup-page__card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  max-width: 448px;
+  padding: 32px 33px 33px;
+  width: 100%;
+}
+
+.signup-page__header {
+  display: grid;
+  gap: var(--space-1);
+  text-align: center;
+}
+
+.signup-page__header h1,
+.signup-page__header p,
+.signup-page__signin p {
+  margin: 0;
+}
+
+.signup-page__header h1 {
+  color: var(--color-gray-800);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.signup-page__header p {
+  color: var(--color-gray-600);
+  font-size: 1rem;
+  line-height: 24px;
+}
+
+.signup-page__form,
+.signup-page__inputs,
+.signup-page__signin {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-page__form {
+  gap: var(--space-6);
+}
+
+.signup-page__inputs,
+.signup-page__signin {
+  gap: var(--space-4);
+}
+
+.signup-page__action {
+  width: 100%;
+}
+
+.signup-page__alert {
+  background: var(--color-red-light);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-sm);
+  color: var(--color-red-dark);
+  font-size: 0.875rem;
+  line-height: 20px;
+  margin: 0;
+  padding: var(--space-3);
+}
+
+.signup-page__divider {
+  align-items: center;
+  color: var(--color-gray-500);
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  min-height: 20px;
+}
+
+.signup-page__divider span {
+  background: var(--color-gray-300);
+  flex: 1 1 0;
+  height: 1px;
+  min-width: 0;
+}
+
+.signup-page__divider strong {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.signup-page__signin {
+  align-items: stretch;
+}
+
+.signup-page__signin p {
+  color: var(--color-gray-600);
+  font-size: 0.875rem;
+  line-height: 20px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .signup-page {
+    padding: var(--space-8) var(--space-4);
+  }
+
+  .signup-page__card {
+    padding: var(--space-6);
+  }
+}

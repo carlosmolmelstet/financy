@@ -1,4 +1,5 @@
 export { Button } from './Button'
+export { ButtonLink } from './ButtonLink'
 export { IconButton } from './IconButton'
 export { Input } from './Input'
 export { PaginationButton } from './PaginationButton'

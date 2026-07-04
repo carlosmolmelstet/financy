@@ -68,6 +68,28 @@
   flex: 0 0 auto;
 }
 
+.ui-field__icon-button {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  height: 32px;
+  justify-content: center;
+  margin: -8px;
+  padding: 0;
+  width: 32px;
+}
+
+.ui-field__icon-button:hover {
+  color: var(--color-brand-base);
+}
+
+.ui-field__icon-button:focus-visible {
+  outline: 2px solid var(--color-brand-base);
+  outline-offset: 2px;
+}
+
 .ui-field__icon svg {
   height: 16px;
   width: 16px;

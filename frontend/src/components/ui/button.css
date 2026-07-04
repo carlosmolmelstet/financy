@@ -29,6 +29,7 @@
 
 .ui-button {
   gap: var(--space-2);
+  text-decoration: none;
   white-space: nowrap;
 }
 

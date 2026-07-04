@@ -11,20 +11,30 @@ type GraphQLResponse<TData> = {
 
 type GraphQLRequestOptions = {
   token?: string
+  variables?: Record<string, unknown>
 }
 
 export async function requestGraphQL<TData>(
   query: string,
   options: GraphQLRequestOptions = {},
 ): Promise<TData> {
-  const response = await fetch(env.backendUrl, {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-      ...(options.token ? { authorization: `Bearer ${options.token}` } : {}),
-    },
-    body: JSON.stringify({ query }),
-  })
+  let response: Response
+
+  try {
+    response = await fetch(env.backendUrl, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        ...(options.token ? { authorization: `Bearer ${options.token}` } : {}),
+      },
+      body: JSON.stringify({
+        query,
+        variables: options.variables,
+      }),
+    })
+  } catch {
+    throw new Error('Network request failed')
+  }
 
   const payload = (await response.json()) as GraphQLResponse<TData>
 

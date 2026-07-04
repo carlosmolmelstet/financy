@@ -1,4 +1,4 @@
-import type { InputHTMLAttributes, ReactNode } from 'react'
+import type { ButtonHTMLAttributes, InputHTMLAttributes, ReactNode } from 'react'
 import { cn } from '../../lib/class-names'
 import './input.css'
 
@@ -8,6 +8,12 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string
   leftIcon?: ReactNode
   rightIcon?: ReactNode
+  rightIconButtonProps?: Omit<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    'children' | 'type'
+  > & {
+    'aria-label': string
+  }
 }
 
 export function Input({
@@ -18,17 +24,28 @@ export function Input({
   label,
   leftIcon,
   rightIcon,
+  rightIconButtonProps,
   ...props
 }: InputProps) {
   const inputId = id ?? props.name
   const helperId = inputId ? `${inputId}-helper` : undefined
   const message = error ?? helperText
+  const { className: rightIconButtonClassName, ...rightIconButtonRestProps } =
+    rightIconButtonProps ?? {}
+  const rightIconClassName = cn(
+    'ui-field__icon',
+    rightIconButtonProps && 'ui-field__icon-button',
+    rightIconButtonClassName,
+  )
 
   return (
-    <label className={cn('ui-field', className)} htmlFor={inputId}>
-      <span className={cn('ui-field__label', error && 'ui-field__label--error')}>
+    <div className={cn('ui-field', className)}>
+      <label
+        className={cn('ui-field__label', error && 'ui-field__label--error')}
+        htmlFor={inputId}
+      >
         {label}
-      </span>
+      </label>
       <span className={cn('ui-field__control', error && 'ui-field__control--error')}>
         {leftIcon ? <span className="ui-field__icon">{leftIcon}</span> : null}
         <input
@@ -37,7 +54,17 @@ export function Input({
           id={inputId}
           {...props}
         />
-        {rightIcon ? <span className="ui-field__icon">{rightIcon}</span> : null}
+        {rightIcon && rightIconButtonProps ? (
+          <button
+            className={rightIconClassName}
+            type="button"
+            {...rightIconButtonRestProps}
+          >
+            {rightIcon}
+          </button>
+        ) : rightIcon ? (
+          <span className={rightIconClassName}>{rightIcon}</span>
+        ) : null}
       </span>
       {message ? (
         <span
@@ -47,6 +74,6 @@ export function Input({
           {message}
         </span>
       ) : null}
-    </label>
+    </div>
   )
 }
