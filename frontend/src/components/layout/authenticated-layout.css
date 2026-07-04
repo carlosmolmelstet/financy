@@ -34,7 +34,8 @@
 }
 
 .authenticated-navbar__brand:focus-visible,
-.authenticated-navbar__link:focus-visible {
+.authenticated-navbar__link:focus-visible,
+.authenticated-navbar__profile:focus-visible {
   border-radius: var(--radius-xs);
   outline: 2px solid var(--color-brand-base);
   outline-offset: 4px;
@@ -93,7 +94,17 @@
   line-height: 20px;
   overflow: hidden;
   text-align: center;
+  text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
   width: 36px;
+}
+
+.authenticated-navbar__profile:hover,
+.authenticated-navbar__profile[aria-current='page'] {
+  background: var(--color-brand-base);
+  color: var(--color-white);
 }
 
 .authenticated-layout__content {

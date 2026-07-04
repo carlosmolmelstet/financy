@@ -4,25 +4,12 @@ import { getAuthenticatedUser, type AuthUser } from '../graphql/auth'
 import { clearAuthToken, getAuthToken } from '../lib/auth-session'
 import { CategoriesPage } from './CategoriesPage'
 import { DashboardPage } from './DashboardPage'
+import { ProfilePage } from './ProfilePage'
+import { TransactionsPage } from './TransactionsPage'
 import './authenticated-page.css'
 
 type AuthenticatedPageProps = {
   route: AuthenticatedRouteKey
-}
-
-const routeContent: Record<AuthenticatedRouteKey, { title: string; description: string }> = {
-  categories: {
-    description: 'Organize os grupos usados para classificar suas movimentações.',
-    title: 'Categorias',
-  },
-  dashboard: {
-    description: 'Acompanhe o resumo financeiro da sua conta.',
-    title: 'Dashboard',
-  },
-  transactions: {
-    description: 'Consulte e gerencie suas entradas e saídas.',
-    title: 'Transações',
-  },
 }
 
 export function AuthenticatedPage({ route }: AuthenticatedPageProps) {
@@ -73,13 +60,10 @@ export function AuthenticatedPage({ route }: AuthenticatedPageProps) {
         <DashboardPage />
       ) : route === 'categories' ? (
         <CategoriesPage />
+      ) : route === 'profile' ? (
+        <ProfilePage onUserUpdate={setUser} user={user} />
       ) : (
-        <section className="authenticated-page__section" aria-labelledby="authenticated-page-title">
-          <header className="authenticated-page__header">
-            <h1 id="authenticated-page-title">{routeContent[route].title}</h1>
-            <p>{routeContent[route].description}</p>
-          </header>
-        </section>
+        <TransactionsPage />
       )}
     </AuthenticatedLayout>
   )

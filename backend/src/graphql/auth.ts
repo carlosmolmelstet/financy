@@ -2,6 +2,7 @@ import {
   createAccount,
   getAuthenticatedUser,
   login,
+  updateProfile,
 } from "../services/auth.service.js";
 import type { GraphQLContext } from "./context.js";
 
@@ -17,6 +18,12 @@ type LoginArgs = {
   input: {
     email: string;
     password: string;
+  };
+};
+
+type UpdateProfileArgs = {
+  input: {
+    name: string;
   };
 };
 
@@ -44,6 +51,10 @@ export const authTypeDefs = `#graphql
     email: String!
     password: String!
   }
+
+  input UpdateProfileInput {
+    name: String!
+  }
 `;
 
 export const authResolvers = {
@@ -55,5 +66,10 @@ export const authResolvers = {
     createAccount: (_parent: unknown, args: CreateAccountArgs) =>
       createAccount(args.input),
     login: (_parent: unknown, args: LoginArgs) => login(args.input),
+    updateProfile: (
+      _parent: unknown,
+      args: UpdateProfileArgs,
+      context: GraphQLContext,
+    ) => updateProfile(context.userId, args.input),
   },
 };

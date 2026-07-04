@@ -11,6 +11,7 @@ type SelectFieldOption = {
 type SelectFieldProps = {
   defaultOpen?: boolean
   defaultValue?: string
+  disabled?: boolean
   helperText?: string
   label: string
   leftIcon?: ReactNode
@@ -24,6 +25,7 @@ type SelectFieldProps = {
 export function SelectField({
   defaultOpen = false,
   defaultValue,
+  disabled = false,
   helperText,
   label,
   leftIcon,
@@ -51,6 +53,10 @@ export function SelectField({
   }, [onOpenChange, open])
 
   function selectOption(nextValue: string) {
+    if (disabled) {
+      return
+    }
+
     if (value === undefined) {
       setInternalValue(nextValue)
     }
@@ -93,6 +99,7 @@ export function SelectField({
         aria-expanded={isOpen}
         aria-haspopup="listbox"
         className="ui-select-field__trigger"
+        disabled={disabled}
         onClick={() => changeOpen(!isOpen)}
         type="button"
       >
@@ -112,6 +119,7 @@ export function SelectField({
               <button
                 aria-selected={selected}
                 className="ui-select-field__option"
+                disabled={disabled}
                 key={option.value}
                 onClick={() => selectOption(option.value)}
                 role="option"

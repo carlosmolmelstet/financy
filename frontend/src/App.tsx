@@ -23,6 +23,10 @@ function App() {
     return <AuthenticatedPage route="categories" />
   }
 
+  if (pathname === '/perfil') {
+    return <AuthenticatedPage route="profile" />
+  }
+
   if (pathname === '/erro') {
     return <AuthErrorPage />
   }

@@ -1,13 +1,10 @@
 import type { ReactNode } from 'react'
-import { LogOut } from 'lucide-react'
 import { FinancyLogo } from '../brand/FinancyLogo'
-import { IconButton } from '../ui'
 import type { AuthUser } from '../../graphql/auth'
-import { clearAuthToken } from '../../lib/auth-session'
 import { cn } from '../../lib/class-names'
 import './authenticated-layout.css'
 
-export type AuthenticatedRouteKey = 'dashboard' | 'transactions' | 'categories'
+export type AuthenticatedRouteKey = 'dashboard' | 'transactions' | 'categories' | 'profile'
 
 type AuthenticatedLayoutProps = {
   activeRoute: AuthenticatedRouteKey
@@ -39,11 +36,6 @@ function getInitials(name: string): string {
   const lastInitial = parts.length > 1 ? parts[parts.length - 1]?.[0] ?? '' : ''
 
   return `${firstInitial}${lastInitial}`.toUpperCase()
-}
-
-function handleLogout() {
-  clearAuthToken()
-  window.location.assign('/')
 }
 
 export function AuthenticatedLayout({
@@ -80,16 +72,15 @@ export function AuthenticatedLayout({
           </nav>
 
           <div className="authenticated-navbar__actions">
-            <div
+            <a
               className="authenticated-navbar__profile"
+              aria-current={activeRoute === 'profile' ? 'page' : undefined}
               aria-label={user.name}
+              href="/perfil"
               title={user.name}
             >
               {getInitials(user.name)}
-            </div>
-            <IconButton label="Sair" onClick={handleLogout}>
-              <LogOut aria-hidden="true" />
-            </IconButton>
+            </a>
           </div>
         </div>
       </header>

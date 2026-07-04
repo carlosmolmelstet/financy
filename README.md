@@ -42,17 +42,27 @@ Ferramentas opcionais permitidas, se fizerem sentido:
 
 ## Como rodar localmente
 
-As instrucoes abaixo serao completadas conforme `backend/` e `frontend/` forem implementados.
+O projeto usa SQLite via Prisma. Nao e necessario configurar banco remoto para a entrega do desafio; por padrao, use `DATABASE_URL=file:./dev.db` no backend.
+
+O arquivo `backend/prisma/dev.db` e gerado localmente pelo Prisma ao rodar as migrations. A aplicacao nao depende de dados iniciais: apos a migration, basta criar uma conta pela interface para testar os fluxos.
 
 ### Backend
 
 ```bash
 cd backend
 cp .env.example .env
-# preencha JWT_SECRET e DATABASE_URL=file:./dev.db
 npm install
 npm run db:migrate
 npm run dev
+```
+
+Preencha `backend/.env` com:
+
+```env
+JWT_SECRET=uma-chave-local-segura
+DATABASE_URL=file:./dev.db
+PORT=4000
+CORS_ORIGIN=http://localhost:5173
 ```
 
 O endpoint GraphQL fica disponivel em `http://localhost:4000/graphql`.
@@ -66,12 +76,22 @@ npm install
 npm run dev
 ```
 
+Preencha `frontend/.env` com:
+
+```env
+VITE_BACKEND_URL=http://localhost:4000/graphql
+```
+
+Com o Vite, a aplicacao web fica disponivel em `http://localhost:5173`.
+
 ## Variaveis de ambiente
 
 Backend:
 
 - `JWT_SECRET`
 - `DATABASE_URL`
+- `PORT`
+- `CORS_ORIGIN`
 
 Frontend:
 
@@ -111,5 +131,6 @@ Checklist resumido:
 - Arquivos `.env.example` nos dois projetos.
 - Aplicacao executavel localmente.
 - Layout seguindo o Figma.
+- Banco SQLite configurado com Prisma.
 
 O checklist completo esta em `PROJECT_GUIDE.md`.

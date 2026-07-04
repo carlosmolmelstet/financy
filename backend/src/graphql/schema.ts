@@ -19,6 +19,7 @@ export const typeDefs = `#graphql
   type Mutation {
     createAccount(input: CreateAccountInput!): AuthPayload!
     login(input: LoginInput!): AuthPayload!
+    updateProfile(input: UpdateProfileInput!): User!
     createCategory(input: CreateCategoryInput!): Category!
     updateCategory(id: ID!, input: UpdateCategoryInput!): Category!
     deleteCategory(id: ID!, deleteTransactions: Boolean): Category!

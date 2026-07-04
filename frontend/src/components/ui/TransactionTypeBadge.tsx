@@ -20,7 +20,7 @@ export function TransactionTypeBadge({ type }: TransactionTypeBadgeProps) {
       )}
     >
       <Icon aria-hidden="true" size={16} strokeWidth={2} />
-      {isIncome ? 'Entrada' : 'Saida'}
+      {isIncome ? 'Entrada' : 'Saída'}
     </span>
   )
 }

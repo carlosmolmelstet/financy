@@ -15,6 +15,10 @@ type LoginInput = {
   password: string;
 };
 
+type UpdateProfileInput = {
+  name: string;
+};
+
 type PublicUser = {
   id: string;
   name: string;
@@ -136,6 +140,24 @@ export async function getAuthenticatedUser(userId: string | undefined): Promise<
   if (!user) {
     throw unauthenticated();
   }
+
+  return toPublicUser(user);
+}
+
+export async function updateProfile(
+  userId: string | undefined,
+  input: UpdateProfileInput,
+): Promise<PublicUser> {
+  if (!userId) {
+    throw unauthenticated();
+  }
+
+  const user = await prisma.user.update({
+    data: {
+      name: validateName(input.name),
+    },
+    where: { id: userId },
+  });
 
   return toPublicUser(user);
 }

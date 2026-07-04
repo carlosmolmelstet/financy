@@ -53,15 +53,6 @@ Os arquivos Markdown permitidos na raiz sao:
 
 Qualquer outro arquivo Markdown so deve ser criado se for explicitamente solicitado pelo usuario.
 
-## Uso do repositorio aprovado de referencia
-
-O repositorio aprovado de referencia pode ser consultado apenas para entender comportamento esperado, fluxos, validacoes, telas e casos de borda.
-
-- Nao copiar codigo.
-- Nao copiar estrutura de arquivos.
-- Nao copiar nomes internos de funcoes, componentes ou services.
-- A implementacao final deve ser autoral e diferente.
-
 ## Estrategia de implementacao
 
 O projeto sera implementado em fases, nesta ordem macro:

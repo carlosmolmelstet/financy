@@ -24,6 +24,10 @@ type LoginInput = {
   password: string
 }
 
+type UpdateProfileInput = {
+  name: string
+}
+
 const userFields = `
   id
   name
@@ -85,4 +89,25 @@ export async function getAuthenticatedUser(token: string): Promise<AuthUser> {
   )
 
   return data.me
+}
+
+export async function updateProfile(
+  token: string,
+  input: UpdateProfileInput,
+): Promise<AuthUser> {
+  const data = await requestGraphQL<{ updateProfile: AuthUser }>(
+    `
+      mutation UpdateProfile($input: UpdateProfileInput!) {
+        updateProfile(input: $input) {
+          ${userFields}
+        }
+      }
+    `,
+    {
+      token,
+      variables: { input },
+    },
+  )
+
+  return data.updateProfile
 }

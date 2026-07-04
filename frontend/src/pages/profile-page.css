@@ -1,0 +1,120 @@
+.profile-page {
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  min-height: calc(100dvh - 69px - (var(--space-12) * 2));
+  width: 100%;
+}
+
+.profile-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  max-width: 448px;
+  padding: 33px;
+  width: 100%;
+}
+
+.profile-card__header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  text-align: center;
+  width: 100%;
+}
+
+.profile-card__avatar {
+  align-items: center;
+  background: var(--color-gray-300);
+  border-radius: var(--radius-pill);
+  color: var(--color-gray-800);
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 1.5rem;
+  font-weight: 500;
+  height: 64px;
+  justify-content: center;
+  line-height: 40px;
+  overflow: hidden;
+  text-align: center;
+  width: 64px;
+}
+
+.profile-card__identity {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  width: 100%;
+}
+
+.profile-card__identity h1 {
+  color: var(--color-gray-800);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 28px;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profile-card__identity p {
+  color: var(--color-gray-500);
+  font-size: 1rem;
+  line-height: 24px;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profile-card__divider {
+  background: var(--color-gray-200);
+  height: 1px;
+  width: 100%;
+}
+
+.profile-card__fields,
+.profile-card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.profile-card__actions .ui-button {
+  min-height: 48px;
+  width: 100%;
+}
+
+.profile-card__actions .ui-button--outline .ui-button__icon {
+  color: var(--color-danger);
+}
+
+.profile-card__message {
+  font-size: 0.875rem;
+  line-height: 20px;
+  margin: -16px 0 0;
+}
+
+.profile-card__message--error {
+  color: var(--color-danger);
+}
+
+.profile-card__message--success {
+  color: var(--color-brand-base);
+}
+
+@media (max-width: 700px) {
+  .profile-page {
+    align-items: stretch;
+  }
+
+  .profile-card {
+    padding: var(--space-6);
+  }
+}
