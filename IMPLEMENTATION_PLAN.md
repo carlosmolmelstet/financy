@@ -43,7 +43,7 @@ Regras de uso:
 | Fase 8 - Login, cadastro e sessao no frontend | `complete` |
 | Fase 9 - Layout autenticado e dashboard | `complete` |
 | Fase 10 - Categorias no frontend | `complete` |
-| Fase 11 - Transacoes no frontend | `pending` |
+| Fase 11 - Transacoes no frontend | `in_progress` |
 | Fase 12 - Validacao final e entrega | `pending` |
 
 Proxima fase de implementacao: Fase 11 - Transacoes no frontend.
