@@ -26,6 +26,7 @@ type UpdateCategoryArgs = {
 };
 
 type DeleteCategoryArgs = {
+  deleteTransactions?: boolean | null;
   id: string;
 };
 
@@ -75,6 +76,9 @@ export const categoryResolvers = {
       _parent: unknown,
       args: DeleteCategoryArgs,
       context: GraphQLContext,
-    ) => deleteCategory(context.userId, args.id),
+    ) =>
+      deleteCategory(context.userId, args.id, {
+        deleteTransactions: args.deleteTransactions,
+      }),
   },
 };

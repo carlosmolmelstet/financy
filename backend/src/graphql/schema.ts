@@ -21,7 +21,7 @@ export const typeDefs = `#graphql
     login(input: LoginInput!): AuthPayload!
     createCategory(input: CreateCategoryInput!): Category!
     updateCategory(id: ID!, input: UpdateCategoryInput!): Category!
-    deleteCategory(id: ID!): Category!
+    deleteCategory(id: ID!, deleteTransactions: Boolean): Category!
     createTransaction(input: CreateTransactionInput!): Transaction!
     updateTransaction(id: ID!, input: UpdateTransactionInput!): Transaction!
     deleteTransaction(id: ID!): Transaction!

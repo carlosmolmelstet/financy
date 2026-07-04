@@ -17,6 +17,10 @@ type UpdateCategoryInput = {
   icon?: string | null;
 };
 
+type DeleteCategoryOptions = {
+  deleteTransactions?: boolean | null | undefined;
+};
+
 type PublicCategory = {
   id: string;
   name: string;
@@ -236,6 +240,7 @@ export async function updateCategory(
 export async function deleteCategory(
   userId: string | undefined,
   categoryId: string,
+  options: DeleteCategoryOptions = {},
 ): Promise<PublicCategory> {
   const ownerId = requireUserId(userId);
 
@@ -250,10 +255,31 @@ export async function deleteCategory(
     throw badUserInput("Category not found");
   }
 
-  await prisma.category.delete({
-    where: {
-      id: category.id,
-    },
+  await prisma.$transaction(async (transaction) => {
+    if (options.deleteTransactions) {
+      await transaction.transaction.deleteMany({
+        where: {
+          categoryId: category.id,
+          userId: ownerId,
+        },
+      });
+    } else {
+      await transaction.transaction.updateMany({
+        where: {
+          categoryId: category.id,
+          userId: ownerId,
+        },
+        data: {
+          categoryId: null,
+        },
+      });
+    }
+
+    await transaction.category.delete({
+      where: {
+        id: category.id,
+      },
+    });
   });
 
   return toPublicCategory(category);

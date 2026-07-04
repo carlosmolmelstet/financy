@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { AuthenticatedLayout, type AuthenticatedRouteKey } from '../components/layout'
 import { getAuthenticatedUser, type AuthUser } from '../graphql/auth'
 import { clearAuthToken, getAuthToken } from '../lib/auth-session'
+import { CategoriesPage } from './CategoriesPage'
 import { DashboardPage } from './DashboardPage'
 import './authenticated-page.css'
 
@@ -66,17 +67,17 @@ export function AuthenticatedPage({ route }: AuthenticatedPageProps) {
     )
   }
 
-  const content = routeContent[route]
-
   return (
     <AuthenticatedLayout activeRoute={route} user={user}>
       {route === 'dashboard' ? (
         <DashboardPage />
+      ) : route === 'categories' ? (
+        <CategoriesPage />
       ) : (
         <section className="authenticated-page__section" aria-labelledby="authenticated-page-title">
           <header className="authenticated-page__header">
-            <h1 id="authenticated-page-title">{content.title}</h1>
-            <p>{content.description}</p>
+            <h1 id="authenticated-page-title">{routeContent[route].title}</h1>
+            <p>{routeContent[route].description}</p>
           </header>
         </section>
       )}
